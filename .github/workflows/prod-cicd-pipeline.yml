@@ -24,7 +24,11 @@ jobs:
           node-version: '22'
 
       - name: Install dependencies
-        run: npm install --prefix ./iac
+        run: |
+          cd iac
+          npm install 
+          cd lambdas/pushToNotion
+          npm install
 
       # - name: Build the application
       #   run: npm run build

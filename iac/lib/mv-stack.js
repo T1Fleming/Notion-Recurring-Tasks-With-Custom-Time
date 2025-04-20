@@ -15,14 +15,24 @@ class MvStack extends cdk.Stack {
     // Retrieve the DEPLOY_ENVIRONMENT context variable
     const deployEnvironment = this.node.tryGetContext('deployEnv') || 'default';
 
-    // Prefix resource names with the deploy environment
-    const queue = new sqs.Queue(this, `${deployEnvironment}-MvQueue`, {
-      visibilityTimeout: cdk.Duration.seconds(300)
+    // Create a Lambda function
+    const pushToNotionLambda = new cdk.aws_lambda.Function(this, `${deployEnvironment}-PushToNotionLambda`, {
+      runtime: cdk.aws_lambda.Runtime.NODEJS_18_X,
+      handler: 'index.handler',
+      code: cdk.aws_lambda.Code.fromAsset('lambdas/pushToNotion'),
+      environment: {
+      DEPLOY_ENVIRONMENT: deployEnvironment,
+      },
     });
 
-    const topic = new sns.Topic(this, `${deployEnvironment}-MvTopic`);
+    // // Prefix resource names with the deploy environment
+    // const queue = new sqs.Queue(this, `${deployEnvironment}-MvQueue`, {
+    //   visibilityTimeout: cdk.Duration.seconds(300)
+    // });
 
-    topic.addSubscription(new subs.SqsSubscription(queue));
+    // const topic = new sns.Topic(this, `${deployEnvironment}-MvTopic`);
+
+    // topic.addSubscription(new subs.SqsSubscription(queue));
   }
 }
 

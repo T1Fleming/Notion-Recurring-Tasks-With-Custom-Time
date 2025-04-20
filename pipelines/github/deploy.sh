@@ -1,1 +1,0 @@
-cdk deploy --context deployEnv=$DEPLOY_ENVIRONMENT
