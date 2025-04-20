@@ -1,0 +1,21 @@
+{
+  "name": "notion-recurring-tasks-with-custom-time",
+  "version": "1.0.0",
+  "description": "Extends notion's recurring task creation ability to include a specific time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-github": "sh pipelines/github/deploy.sh",
+    "deploy-local": "sh pipelines/local/set.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T1Fleming/Notion-Recurring-Tasks-With-Custom-Time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T1Fleming/Notion-Recurring-Tasks-With-Custom-Time/issues"
+  },
+  "homepage": "https://github.com/T1Fleming/Notion-Recurring-Tasks-With-Custom-Time#readme"
+}
