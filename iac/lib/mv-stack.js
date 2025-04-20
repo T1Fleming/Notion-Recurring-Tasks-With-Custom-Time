@@ -17,7 +17,7 @@ class MvStack extends cdk.Stack {
 
     // Create a Lambda function
     const pushToNotionLambda = new cdk.aws_lambda.Function(this, `${deployEnvironment}-PushToNotionLambda`, {
-      runtime: cdk.aws_lambda.Runtime.NODEJS_18_X,
+      runtime: cdk.aws_lambda.Runtime.NODEJS_22_X,
       handler: 'index.handler',
       code: cdk.aws_lambda.Code.fromAsset('lambdas/pushToNotion'),
       environment: {
