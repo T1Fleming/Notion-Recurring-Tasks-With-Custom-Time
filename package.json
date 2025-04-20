@@ -4,9 +4,7 @@
   "description": "Extends notion's recurring task creation ability to include a specific time",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-github": "sh pipelines/github/deploy.sh",
-    "deploy-local": "sh pipelines/local/set.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
